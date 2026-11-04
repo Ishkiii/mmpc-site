@@ -271,3 +271,19 @@ footer p { margin: 0; }
   .nav .call span { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .bar i { width: 100%; } }
+
+/* kontakt forma */
+.cform { display: grid; gap: 14px; margin-top: 18px; padding: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+.cform h3 { margin: 0; font-size: 18px; }
+.cform-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cform label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+.cform input, .cform textarea { width: 100%; padding: 12px 14px; font: inherit; color: var(--text); background: var(--bg2); border: 1px solid var(--line); border-radius: 10px; }
+.cform textarea { resize: vertical; }
+.cform input:focus, .cform textarea:focus { outline: none; border-color: var(--accent); }
+.cform .btn { justify-self: start; cursor: pointer; font: inherit; font-weight: 600; }
+.cform .btn:disabled { opacity: .6; cursor: wait; }
+.cform-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.cform-note { margin: 0; font-size: 13px; color: var(--muted); }
+.cform-status { margin: 0; font-size: 15px; color: var(--accent); }
+.cform-status.err { color: var(--danger); }
+@media (max-width: 620px) { .cform-row { grid-template-columns: 1fr; } .cform .btn { justify-self: stretch; } }

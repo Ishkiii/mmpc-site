@@ -371,6 +371,19 @@
         <a class="card contact-card" href="https://www.instagram.com/mmpcservis" target="_blank" rel="noopener"><span class="emo"><svg class="i" aria-hidden="true"><use href="#i-insta"/></svg></span><span><small>Instagram</small><b>@mmpcservis</b></span></a>
         <a class="card contact-card" href="https://wa.me/38763568492" target="_blank" rel="noopener"><span class="emo"><svg class="i" aria-hidden="true"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><b>Brza poruka</b></span></a>
       </div>
+      <form class="cform" id="cform" action="https://formsubmit.co/ajax/info@mmpc.info" method="post" data-subject="Novi upit s mmpc.info" data-sending="Šaljem…" data-ok="Hvala! Upit je poslan, javit ćemo ti se uskoro." data-fail="Slanje nije uspjelo. Pokušaj ponovno ili nas nazovi na +387 63 568 492.">
+        <h3>Pošalji upit</h3>
+        <div class="cform-row">
+          <label>Ime i prezime<input name="name" type="text" autocomplete="name" maxlength="100" pattern=".*\S.*" title="Upiši ime i prezime" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" maxlength="150" required></label>
+        </div>
+        <label>Telefon<input name="phone" type="tel" autocomplete="tel" maxlength="40" pattern="(?=(.*[0-9]){6})[0-9+ .\/\(\)\-]+" title="Upiši broj telefona, npr. 063 123 456" required></label>
+        <label>Poruka<textarea name="message" rows="5" maxlength="3000" required></textarea></label>
+        <input class="cform-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn primary" type="submit">Pošalji upit</button>
+        <p class="cform-note">Podatke koristimo samo za odgovor na tvoj upit. Poruka se dostavlja preko usluge FormSubmit.</p>
+        <p class="cform-status" role="status" hidden></p>
+      </form>
     </div>
   </div>
 </section>

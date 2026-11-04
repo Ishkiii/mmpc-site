@@ -62,3 +62,24 @@
     e.preventDefault(); show(addr);
   });
 })();
+
+// kontakt forma: šalje upit preko FormSubmit na info@mmpc.info, bez napuštanja stranice
+(function () {
+  var f = document.getElementById('cform');
+  if (!f) return;
+  var btn = f.querySelector('button[type=submit]'), st = f.querySelector('.cform-status'), label = btn.textContent;
+  function say(text, err) { st.hidden = false; st.textContent = text; st.className = 'cform-status' + (err ? ' err' : ''); }
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = {}; new FormData(f).forEach(function (v, k) { d[k] = v; });
+    if (d._honey) return; // botovi popune skriveno polje
+    delete d._honey;
+    d._subject = f.dataset.subject; d._replyto = d.email; d._template = 'table';
+    btn.disabled = true; btn.textContent = f.dataset.sending; st.hidden = true;
+    fetch(f.action, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || 'send failed'); }); })
+      .then(function () { f.reset(); say(f.dataset.ok); })
+      .catch(function () { say(f.dataset.fail, true); })
+      .then(function () { btn.disabled = false; btn.textContent = label; });
+  });
+})();

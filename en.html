@@ -372,6 +372,19 @@
         <a class="card contact-card" href="https://www.instagram.com/mmpcservis" target="_blank" rel="noopener"><span class="emo"><svg class="i" aria-hidden="true"><use href="#i-insta"/></svg></span><span><small>Instagram</small><b>@mmpcservis</b></span></a>
         <a class="card contact-card" href="https://wa.me/38763568492" target="_blank" rel="noopener"><span class="emo"><svg class="i" aria-hidden="true"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><b>Quick message</b></span></a>
       </div>
+      <form class="cform" id="cform" action="https://formsubmit.co/ajax/info@mmpc.info" method="post" data-subject="New enquiry from mmpc.info" data-sending="Sending…" data-ok="Thank you! Your message was sent, we will get back to you soon." data-fail="Sending failed. Please try again or call us on +387 63 568 492.">
+        <h3>Send an enquiry</h3>
+        <div class="cform-row">
+          <label>Full name<input name="name" type="text" autocomplete="name" maxlength="100" pattern=".*\S.*" title="Enter your full name" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" maxlength="150" required></label>
+        </div>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" maxlength="40" pattern="(?=(.*[0-9]){6})[0-9+ .\/\(\)\-]+" title="Enter a phone number, e.g. 063 123 456" required></label>
+        <label>Message<textarea name="message" rows="5" maxlength="3000" required></textarea></label>
+        <input class="cform-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn primary" type="submit">Send enquiry</button>
+        <p class="cform-note">We only use your details to reply to your enquiry. The message is delivered through the FormSubmit service.</p>
+        <p class="cform-status" role="status" hidden></p>
+      </form>
     </div>
   </div>
 </section>
