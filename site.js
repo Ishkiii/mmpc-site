@@ -77,9 +77,19 @@
     d._subject = f.dataset.subject; d._replyto = d.email; d._template = 'table';
     btn.disabled = true; btn.textContent = f.dataset.sending; st.hidden = true;
     fetch(f.action, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || 'send failed'); }); })
+      .then(function (r) {
+        return r.text().then(function (t) {
+          var j = {}; try { j = JSON.parse(t); } catch (x) {}
+          if (!r.ok || String(j.success) !== 'true') throw new Error(j.message || ('HTTP ' + r.status + (t ? ': ' + t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160) : '')));
+        });
+      })
       .then(function () { f.reset(); say(f.dataset.ok); })
-      .catch(function () { say(f.dataset.fail, true); })
+      .catch(function (err) {
+        // show FormSubmit's own reason (e.g. "This form needs Activation") under the error text
+        var why = err && err.message ? err.message : String(err);
+        if (window.console) console.warn('Contact form failed:', err);
+        say(f.dataset.fail + ' (' + why + ')', true);
+      })
       .then(function () { btn.disabled = false; btn.textContent = label; });
   });
 })();
