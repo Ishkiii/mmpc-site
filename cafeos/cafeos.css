@@ -1,0 +1,37 @@
+/* CafeOS stranica - dodaci uz ../style.css (isti izgled kao mmpc.info) */
+.brand small { color: var(--accent); }
+.shot { margin: 0; background: var(--bg2); border: 1px solid var(--line); border-radius: 18px; padding: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 60px rgba(25,230,164,.08); }
+.shot .mock-top { margin: 2px 4px 10px; }
+.shot img { border-radius: 10px; width: 100%; height: auto; }
+
+.ico { margin-bottom: 14px; }
+
+/* 3 koraka */
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.steps li { counter-increment: s; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; position: relative; }
+.steps li::before { content: "0" counter(s); font-family: var(--mono); font-size: 13px; color: var(--accent); display: block; margin-bottom: 10px; letter-spacing: .1em; }
+.steps h3 { margin: 0 0 6px; font-size: 18px; }
+.steps p { margin: 0; color: var(--muted); font-size: 15px; }
+.steps .time { display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 12px; color: var(--accent2); }
+
+/* zasto lokalno */
+.ok-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.ok-list li { display: flex; gap: 12px; align-items: flex-start; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.ok-list li::before { content: "✓"; flex: none; width: 24px; height: 24px; border-radius: 6px; display: grid; place-items: center; font-weight: 700; color: #03140e; background: var(--accent); }
+.ok-list b { display: block; }
+.ok-list span { color: var(--muted); font-size: 15px; }
+
+/* proba i cijena */
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.plan { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; }
+.plan.hot { border-color: rgba(25,230,164,.5); box-shadow: 0 0 0 1px rgba(25,230,164,.15), 0 20px 60px rgba(25,230,164,.08); }
+.plan .big { font-size: 40px; font-weight: 700; line-height: 1.1; margin: 6px 0 4px; letter-spacing: -.02em; }
+.plan .big small { font-size: 16px; color: var(--muted); font-weight: 500; }
+.plan p { color: var(--muted); margin: 0 0 16px; }
+.plan ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 8px; font-size: 15px; color: #c9d4e5; }
+.plan ul li::before { content: "▸ "; color: var(--accent); font-family: var(--mono); }
+.plan .btn { margin-top: auto; }
+.req { margin-top: 18px; }
+
+@media (max-width: 960px) { .steps, .plans { grid-template-columns: 1fr; } }
+.plan .badge { align-self: flex-start; }

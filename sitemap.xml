@@ -14,4 +14,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mmpc.info/"/>
     <lastmod>2026-10-26</lastmod>
   </url>
+  <url>
+    <loc>https://mmpc.info/cafeos/</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mmpc.info/cafeos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mmpc.info/cafeos/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mmpc.info/cafeos/"/>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://mmpc.info/cafeos/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mmpc.info/cafeos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mmpc.info/cafeos/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mmpc.info/cafeos/"/>
+    <lastmod>2026-11-18</lastmod>
+  </url>
 </urlset>
